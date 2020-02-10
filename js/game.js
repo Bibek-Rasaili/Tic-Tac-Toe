@@ -1,9 +1,16 @@
 
 var gamePattern = [];
+var turnO = true;
 
 
 function addSymbol(id) {
-  $('#'+id).append("<img src='images/circle.png' alt='circle'>");
+  if (turnO)
+    $('#'+id).append("<img src='images/circle.png' alt='circle'>");
+  else
+    $('#'+id).append("<img src='images/cross.png' alt='cross'>");
+
+  turnO = !turnO; //so if its true, its set to false, if false, set to true.
+  //this toggles the boolean to implement player turns
 }
 
 //Add EventListener to boxes
