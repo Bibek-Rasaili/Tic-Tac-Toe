@@ -62,15 +62,16 @@ i {
   /* This gives the impression the game is more interactive */
 }
 
+.checked {
+  background-color: grey ;//#EAEAEA
+}
+
 
 .game-over{
   background-color: red;
   opacity: 0.8;
 }
 
-.pressed {
-  /* Do Something */
-}
 
 img {
   width:100%;
