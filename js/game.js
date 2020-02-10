@@ -10,6 +10,7 @@ function addSymbol(id) {
     $('#' + id).append("<img src='images/cross.png' alt='cross'>");
       $('#'+id).addClass("checked");
   }
+  //Next click should have different symbol (a boolean to implement turns)
 
   turnO = !turnO; //so if its true, its set to false, if false, set to true.
   //this toggles the boolean to implement player turns
@@ -17,18 +18,14 @@ function addSymbol(id) {
 
 //Add EventListener to boxes
 $('div[type="button"]').click(function() {
+
   if(!$('#'+this.id).hasClass("checked"))
     addSymbol(this.id);
   else
-    alert("Soz it has been check, love");
-
+    alert("Soz it has been checked, love");
+//when called adding a symbol, (check If not already  )
 });
 
 
-
-//when called adding a symbol, (check If not already  )
-
-//Next click should have different symbol (a boolean to implement turns)
-
-
 //if winning combination, win/game over!
+// GAME ALGORITHM
