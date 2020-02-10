@@ -1,0 +1,93 @@
+body {
+  background-color: #011F3F ;
+  color: #FEF2BF;
+
+  text-align: center;
+}
+
+p {
+  visibility: hidden;
+  color: black;
+  margin:0;
+  padding:0;
+}
+
+i {
+  margin:0;
+  padding:0;
+}
+
+#heading-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:5%;
+}
+
+.container {
+  width : 90%;
+  margin: auto;
+
+
+}
+
+.row-container{
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
+
+  background-color: black;
+} /*Added this to give padding top and botton*/
+
+.row {
+  display: block;
+
+  /* background-color: black; */
+  /* height: 76px; crops at overflow */
+}
+
+.cell {
+  display: inline-block;
+
+  width: 20%;
+  height:145px;
+
+  /* margin: 8px 3px; */
+  background-color: #FFF;
+
+  border: 1px solid black;
+  /*Giving it 10 makes it put too much margin*/
+}
+
+.cell:hover{
+  background-color: #EAEAEA;
+  /* This gives the impression the game is more interactive */
+}
+
+
+.game-over{
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  /* Do Something */
+}
+
+img {
+  width:100%;
+  height: 145px;
+}
+
+
+
+/*
+USELESS! IMG better.
+It was pushing down the div. Tried changing the margin, padding to no avail.
+.icon-awe {
+  font-size: 2rem;
+  color: black;
+
+
+  display: block;
+  /* height: 30px;
+  width:20%;
+} */
