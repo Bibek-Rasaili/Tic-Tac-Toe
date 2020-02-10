@@ -17,8 +17,10 @@ function addSymbol(id) {
 
 //Add EventListener to boxes
 $('div[type="button"]').click(function() {
-  addSymbol(this.id);
-
+  if(!$('#'+this.id).hasClass("checked"))
+    addSymbol(this.id);
+  else
+    alert("Soz it has been check, love");
 
 });
 
