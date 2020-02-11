@@ -12,7 +12,12 @@ var turnOcount = 0;
 // ];
 //Decided to use 1D array instead of 2D and it doable with either
 //1D array is faster and consumes less memory as it require less allocation
-var board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+            //0,  1,  2,
+var board = [-1, -1, -1,
+            //3,  4,  5,
+             -1, -1, -1,
+             //6,  7,  8.
+             -1, -1, -1];
 //-1 signifies empty space
 //0 will signify O
 //1 will signify X
@@ -20,6 +25,27 @@ var board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
 function mapArray() {
   //if box class = checked
   // check what class it has. - circle = 0, cross = 1
+  for (var i=0; i<9; i++){
+    if($('#cell'+(i+1)).hasClass("checked"))
+    {
+
+
+
+      if ($('#cell'+(i+1)).hasClass("circle")) {
+        console.log("I have class circle: "+ $('#cell'+(i+1)).hasClass("circle") );
+        board[i] = 0;
+      } else {
+        console.log("I have class cross: "+ $('#cell'+(i+1)).hasClass("cross") );
+        board[i] = 1;
+      }
+
+      console.log(board);
+
+    } else {
+      //its empty, so do nothing.
+      //REDUNDANT
+    }
+  }
 
   //if cell1, has checked,
   // .hasClass circle, Board[0][1] = 0
