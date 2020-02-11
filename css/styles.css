@@ -66,6 +66,14 @@ i {
   background-color: grey ;//#EAEAEA
 }
 
+.circle {
+  /* This is created for JS */
+}
+
+.cross {
+  /* This is created for JS */
+}
+
 
 .game-over{
   background-color: red;

@@ -5,6 +5,33 @@ var turnOcount = 0;
 //documents/tracks the amout of turn O (/player1) has had.
 //This will be used to trigger check won when its 3;
 
+var board = [
+  [-1, -1, -1],
+  [-1, -1, -1],
+  [-1, -1, -1]
+];
+//-1 signifies empty space
+//0 will signify O
+//1 will signify X
+
+function mapArray() {
+  //if box class = checked
+  // check what class it has. - circle = 0, cross = 1
+
+  //if cell1, has checked,
+  // .hasClass circle, Board[0][1] = 0
+  //else Board[0][1] = 1;
+
+
+
+  //if box class doesn't have class "checked", do nothing, as its empty.
+
+
+
+  //REMEMBER TO INITIALISE board ARRAY
+  //in RESTGAME Function (basically once game is over/finished).
+}
+
 
 function checkWon() {
 
@@ -12,8 +39,10 @@ function checkWon() {
                     //1 when checking if X won
 
   alert("Player 1's 3rd turn has triggered me");
+  console.log(board);
 
   //draw the webpage board into an array
+  mapArray(); //board array is global, therefore don't need to assign this.
   // map the board into a 2D array
 
   //check for O wins
@@ -49,13 +78,13 @@ function resetGame() {
 function addSymbol(id) {
   if (turnO) {
     $('#' + id).append("<img src='images/circle1.png' alt='circle'>");
-    $('#' + id).addClass("checked");
+    $('#' + id).addClass("checked circle");
 
     turnOcount++; //because O goes first
     //first winning condition possible is when O is on 3rd turn.
   } else {
     $('#' + id).append("<img src='images/cross.png' alt='cross'>");
-    $('#' + id).addClass("checked");
+    $('#' + id).addClass("checked cross");
   }
   //Next click should have different symbol (a boolean to implement turns)
 
