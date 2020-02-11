@@ -5,11 +5,14 @@ var turnOcount = 0;
 //documents/tracks the amout of turn O (/player1) has had.
 //This will be used to trigger check won when its 3;
 
-var board = [
-  [-1, -1, -1],
-  [-1, -1, -1],
-  [-1, -1, -1]
-];
+// var board = [
+//   [-1, -1, -1],
+//   [-1, -1, -1],
+//   [-1, -1, -1]
+// ];
+//Decided to use 1D array instead of 2D and it doable with either
+//1D array is faster and consumes less memory as it require less allocation
+var board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
 //-1 signifies empty space
 //0 will signify O
 //1 will signify X
