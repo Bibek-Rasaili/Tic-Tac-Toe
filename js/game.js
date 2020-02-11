@@ -28,8 +28,9 @@ function mapArray() {
   for (var i=0; i<9; i++){
     if($('#cell'+(i+1)).hasClass("checked"))
     {
-
-
+        //if cell1, has checked,
+        // .hasClass circle, Board[1] = 0
+        //else Board[1] = 1;
 
       if ($('#cell'+(i+1)).hasClass("circle")) {
         console.log("I have class circle: "+ $('#cell'+(i+1)).hasClass("circle") );
@@ -46,19 +47,31 @@ function mapArray() {
       //REDUNDANT
     }
   }
-
-  //if cell1, has checked,
-  // .hasClass circle, Board[0][1] = 0
-  //else Board[0][1] = 1;
-
-
-
   //if box class doesn't have class "checked", do nothing, as its empty.
 
+  //no return required as board is global variable for now
 
-
+//IMPORTANT
   //REMEMBER TO INITIALISE board ARRAY
   //in RESTGAME Function (basically once game is over/finished).
+}
+
+function hasWon() {
+//would take in array as param if not global.
+
+//MAIN Algorithm here!!
+  var hasWinner = false;//start of assuming no one as hasWon
+  //then set to true if pattern exist.
+
+
+  
+
+
+
+
+
+//returns true if won,
+//false if not.
 }
 
 
@@ -72,12 +85,12 @@ function checkWon() {
 
   //draw the webpage board into an array
   mapArray(); //board array is global, therefore don't need to assign this.
-  // map the board into a 2D array
+  // map the board into a 1D array
 
+
+  return hasWon();
   //check for O wins
-
   //check for X wins
-
   //return true if someone wins
 
   //return that with also soemthing ...(TBA)
@@ -85,7 +98,6 @@ function checkWon() {
   //return or set a global variable like
   // var Owon = -1; to 0 is O won
   // Owon to 1; if X won..
-
 
   //return false if no one won;
 }
