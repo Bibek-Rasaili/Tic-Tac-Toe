@@ -1,4 +1,13 @@
-var gamePattern = [];
+var winPatterns = [
+    [0,1,2, 0,4,8, 0,3,6],
+    [1,4,7],
+    [2,4,6, 2,5,8],
+    [3,4,5],
+    [6,7,8]
+];
+//See Algorithm Pattern image/plan to understand
+
+
 var turnO = true;
 
 var turnOcount = 0;
@@ -63,8 +72,24 @@ function hasWon() {
   var hasWinner = false;//start of assuming no one as hasWon
   //then set to true if pattern exist.
 
+//If not -1, then run through the Checks/pattern - DEPENDING on the location.
 
-  
+
+//Algorithm Pattern check plan
+
+  //if board[0] != -1
+  // then run checks
+
+  //if board[1] != -1
+  // run checks
+
+  //if board[2,3,6] != -1
+  // check
+
+
+
+
+
 
 
 
