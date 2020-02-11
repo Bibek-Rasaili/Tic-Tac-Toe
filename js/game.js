@@ -8,13 +8,28 @@ var turnOcount = 0;
 
 function checkWon() {
 
+  var checkSum = 0;//when checking if 0 won
+                    //1 when checking if X won
+
   alert("Player 1's 3rd turn has triggered me");
 
+  //draw the webpage board into an array
+  // map the board into a 2D array
+
+  //check for O wins
+
+  //check for X wins
+
+  //return true if someone wins
+
+  //return that with also soemthing ...(TBA)
+  //OR
+  //return or set a global variable like
+  // var Owon = -1; to 0 is O won
+  // Owon to 1; if X won..
 
 
-
-
-
+  //return false if no one won;
 }
 
 
