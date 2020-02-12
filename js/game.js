@@ -211,6 +211,17 @@ $('div[type="button"]').click(function() {
       //If has winner, run win statements.
       //However, if all cells filled and still no winner: Delcare/run draw statements and reset
 
+      //run this if all box filled.
+      if($('.checked').length === 9)
+      {
+        $('#heading-title').text("Draw").addClass("game-finished");
+        //Dont really need to lock cells as this should only run if all are full/checked
+        setTimeout(resetGame, 4000);
+      }
+      //***
+      //Don't need to do if full and hasWinner == false
+      //because this is in an else statement where this will only run IF no one has won!!
+
     }
   } else {
     console.log("Soz it has been checked, love");
