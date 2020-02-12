@@ -28,64 +28,19 @@ var winnerSymbol = -1; // set to 0 if O wins
 
 
 function checkFor0() {
-
-  if (board[0] === board[1] && board[1] === board[2] && !(board[0] === -1)) {
-    hasWinner = true;
-    //won.
-    if (board[0] === 0)
-      winnerSymbol = 0;
-    else
-      winnerSymbol = 1;
-    //can use else here as someone has won, so its 1 or the Other...
-  }
-  //____
-  if (board[0] === board[4] && board[4] === board[8] && !(board[0] === -1)) {
-    hasWinner = true;
-    //won.
-    if (board[0] === 0)
-      winnerSymbol = 0;
-    else
-      winnerSymbol = 1;
-    //can use else here as someone has won, so its 1 or the Other...
-  }
-  //___
-  if (board[0] === board[3] && board[3] === board[6] && !(board[0] === -1)) {
-    hasWinner = true;
-    //won.
-    if (board[0] === 0)
-      winnerSymbol = 0;
-    else
-      winnerSymbol = 1;
-    //can use else here as someone has won, so its 1 or the Other...
-  }
-  console.log("Checks for 0.. complete." + hasWinner + " " + winnerSymbol);
-}
-
+  checkFor136(0,1,2);
+  checkFor136(0,4,8);
+  checkFor136(0,3,6);
+}//012
+//048
+//036
 
 
 function checkFor2() {
-  //2
-  if (board[2] === board[4] && board[4] === board[6] && !(board[2] === -1)) {
-    hasWinner = true;
-    //won.
-    if (board[2] === 0)
-      winnerSymbol = 0;
-    else
-      winnerSymbol = 1;
-    //can use else here as someone has won, so its 1 or the Other...
-  }
-  //_________
-  if (board[2] === board[5] && board[5] === board[8] && !(board[2] === -1)) {
-    hasWinner = true;
-    //won.
-    if (board[2] === 0)
-      winnerSymbol = 0;
-    else
-      winnerSymbol = 1;
-    //can use else here as someone has won, so its 1 or the Other...
-  }
-  console.log("Checks for 2.. complete." + hasWinner + " " + winnerSymbol);
-}
+  checkFor136(2,4,6);
+  checkFor136(2,5,8);
+} //2,4,6
+//2,5,8
 
 
 function checkFor136(a,b,c) {
@@ -99,22 +54,18 @@ function checkFor136(a,b,c) {
       winnerSymbol = 1;
     //can use else here as someone has won, so its 1 or the Other...
   }
-  console.log("Checks for 1.. complete." + hasWinner + " " + winnerSymbol);
+  console.log("Checks for "+a+".. complete." + hasWinner + " " + winnerSymbol);
 }
 //147
 //678
 //345
 
 
-
 function hasWon() {
-  console.log("hasWinner " + hasWinner);
 
   if (!(board[0] === -1)){
     checkFor0();
   }
-
-  console.log("hasWinner" + hasWinner);
 
   if (!(board[1] === -1) && hasWinner == false) {
     console.log((hasWinner));
@@ -136,15 +87,15 @@ function hasWon() {
 
   //return false if no one won;
   if (winnerSymbol === 0)
-    return alert("Player 0 has won");
+     alert("Player 0 has won");
   if (winnerSymbol === 1)
-    return alert("Player X has won")
+     alert("Player X has won")
   //cant be else cuz its show X won if O not true.
 
   console.log("hasWinner" + hasWinner);
   if (hasWinner) {
     alert("Congratulations");
-    resetGame();
+    setTimeout(resetGame, 2000);
   }
 }
 
@@ -245,7 +196,7 @@ $('div[type="button"]').click(function() {
       //Also Remember to RESET/initialise the variable such as turnO, turnOcount, etc
     }
   } else {
-    alert("Soz it has been checked, love");
+    console.log("Soz it has been checked, love");
     //prevents adding symbol of checked
   }
 });
