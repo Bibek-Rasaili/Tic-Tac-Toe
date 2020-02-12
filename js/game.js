@@ -83,20 +83,6 @@ function hasWon() {
     checkFor136(6,7,8);
   }
 
-
-
-  //return false if no one won;
-  if (winnerSymbol === 0)
-     alert("Player 0 has won");
-  if (winnerSymbol === 1)
-     alert("Player X has won")
-  //cant be else cuz its show X won if O not true.
-
-  console.log("hasWinner" + hasWinner);
-  if (hasWinner) {
-    alert("Congratulations");
-    setTimeout(resetGame, 2000);
-  }
 }
 
 
@@ -154,6 +140,8 @@ function resetGame() {
     board[i] = -1;
   }
   console.log("reset board " + board);
+  console.log("HEADER");
+  $('#heading-title').text("Tic-Tac-Toe");//or .html()..
 }
 
 
@@ -180,18 +168,27 @@ $('div[type="button"]').click(function() {
 
   if (!$('#' + this.id).hasClass("checked")) {
     addSymbol(this.id);
-
-    var won = false;
+    //Adding Xs and Os
 
     if (turnOcount >= 3) {
-      // won = checkWon(); //under dev
-      checkWon(); // FOR NOW.
+      checkWon();
+      //start checking if either player has won
     }
 
 
-    if (won) {
-      alert("Congratulations, you won!");
+
+      // //return false if no one won;
+      // if (winnerSymbol === 0)
+      //    alert("Player 0 has won");
+      // if (winnerSymbol === 1)
+      //    alert("Player X has won")
+      //cant be else cuz its show X won if O not true.
+
+    if (hasWinner) {
+      alert("Congratulations, Player "+(winnerSymbol === 0 ? "O":"X")+" won!");
+
       setTimeout(resetGame, 2000);
+
       //restGame()
       //Also Remember to RESET/initialise the variable such as turnO, turnOcount, etc
     }
