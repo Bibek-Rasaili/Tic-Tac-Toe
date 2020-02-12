@@ -89,8 +89,6 @@ function hasWon() {
 
 
 
-
-
 function mapArray() {
   for (var i = 0; i < 9; i++) {
 
@@ -224,7 +222,13 @@ $('div[type="button"]').click(function() {
 
     }
   } else {
-    console.log("Soz it has been checked, love");
+    //animate the header red for timeout
+    $('#heading-title').fadeOut(200).fadeIn(200);
+
+    $('#heading-title').addClass("error");
+    setTimeout(function(){
+      $('#heading-title').removeClass("error");
+    },400);
     //prevents adding symbol of checked
   }
 });

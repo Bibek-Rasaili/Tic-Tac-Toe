@@ -80,6 +80,10 @@ i {
   opacity: 0.8;
 }
 
+.error {
+  color: red;
+  opacity: 0.8;
+}
 
 img {
   width:100%;
