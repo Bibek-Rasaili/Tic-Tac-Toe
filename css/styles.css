@@ -75,8 +75,8 @@ i {
 }
 
 
-.game-over{
-  background-color: red;
+.game-finished{
+  color: red;
   opacity: 0.8;
 }
 

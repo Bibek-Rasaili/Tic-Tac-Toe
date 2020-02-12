@@ -76,6 +76,8 @@ function hasWon() {
   }
 
   if (!(board[3] === -1) && hasWinner == false) {
+    console.log((hasWinner));
+    console.log(board);
     checkFor136(3,4,5);
   }
 
@@ -110,7 +112,7 @@ function mapArray() {
 }
 
 function checkWon() {
-  alert("Player 1's 3rd turn has triggered me");
+  console.log("Player 1's 3rd complete: Checking now begins");
   console.log(board);
 
   //draw the webpage board into an array
@@ -122,26 +124,34 @@ function checkWon() {
 
 
 
-
+//Game finished.
 function resetGame() {
   $('div[type="button"]').removeClass("checked");
 
+  $('div[type="button"]').removeClass("circle");
+  $('div[type="button"]').removeClass("cross");
+  //removes classes checked,circle and cross.
+  //important to remove circle and cross too else it will give wrong number on the Board
+  //during checking if won...
+
   $('img').remove();
   //reset the game by removing the images and "checked" class from the divs/box(es)
-  turnO = true;
-  turnOcount = 0;
-  //Game finished.
+
+  hasWinner = false; //No winners
+  winnerSymbol = -1; //No symbol has won
+
+  turnO = true; //O's turn
+  turnOcount = 0; //O had 0 turns
+
   //player 1 goes first. and 0 boxes checked.
-  hasWinner = false;
-  winnerSymbol = -1;
 
   console.log(board);
   for (var i = 0; i < board.length; i++) {
     board[i] = -1;
   }
   console.log("reset board " + board);
-  console.log("HEADER");
-  $('#heading-title').text("Tic-Tac-Toe");//or .html()..
+
+  $('#heading-title').text("Tic-Tac-Toe").removeClass("game-finished");//or .html()..
 }
 
 
@@ -160,6 +170,11 @@ function addSymbol(id) {
 
   turnO = !turnO; //so if its true, its set to false, if false, set to true.
   //this toggles the boolean to implement player turns
+}
+
+function lockCells() {
+  $('.cell').addClass("checked"); //by adding pressed class,
+                            //it stops user continuing until reset.
 }
 
 
@@ -185,12 +200,17 @@ $('div[type="button"]').click(function() {
       //cant be else cuz its show X won if O not true.
 
     if (hasWinner) {
-      alert("Congratulations, Player "+(winnerSymbol === 0 ? "O":"X")+" won!");
+      $('#heading-title').text("Congratulations, Player "+(winnerSymbol === 0 ? "O":"X")+" won!").addClass("game-finished");
 
-      setTimeout(resetGame, 2000);
+      lockCells(); //lock cells so after a player has already won, they can't still keep addding symbol to the box/board
+      setTimeout(resetGame, 4000);
 
       //restGame()
       //Also Remember to RESET/initialise the variable such as turnO, turnOcount, etc
+    } else {
+      //If has winner, run win statements.
+      //However, if all cells filled and still no winner: Delcare/run draw statements and reset
+
     }
   } else {
     console.log("Soz it has been checked, love");
